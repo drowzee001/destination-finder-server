@@ -99,7 +99,7 @@ router.post("/user", auth, async (req, res) => {
 });
 
 router.get("/", auth, async (req, res) => {
-  console.log(req.user.id)
+  console.log("user id =" + req.user.id);
   try {
     const user = await User.findById(req.user.id).select(
       "id firstName lastName email"
