@@ -16,8 +16,9 @@ app.use(
   })
 );
 
-const mongoURI = `mongodb+srv://${process.env.MONGO_USERNAME}:${process.env.MONGO_PASSWORD}@cluster0.t5wdb.mongodb.net/destination-finder-users?retryWrites=true&w=majority
-`;
+const mongoURI = process.env.MONGO_URI;
+
+console.log(mongoURI);
 
 mongoose
   .connect(mongoURI, {
@@ -26,7 +27,7 @@ mongoose
     useCreateIndex: true,
   })
   .then(() => console.log("MongoDB Connected..."))
-  .catch((error) => console.log(error));
+  .catch((error) => console.log("Error is \n" + error));
 
 app.use("/users", require("./routes/users"));
 app.use("/locations", require("./routes/locations"));
