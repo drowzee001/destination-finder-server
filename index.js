@@ -25,7 +25,7 @@ mongoose
     useUnifiedTopology: true,
     useCreateIndex: true,
   })
-  .then(() => console.log(mongoURI))
+  .then(() => console.log("MongoDB Connected..."))
   .catch((error) => console.log(error));
 
 app.use("/users", require("./routes/users"));
