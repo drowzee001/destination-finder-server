@@ -11,7 +11,7 @@ app.use(express.json());
 
 app.use(
   cors({
-    origin: "https://destination-finder.donovanrowzee.net",
+    origin: "https://destination-finder.donovanrowzee.com",
     credentials: true,
   })
 );
